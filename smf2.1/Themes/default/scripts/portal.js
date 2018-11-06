@@ -178,7 +178,7 @@ $(document).ready(function() {
 	var EhShoutConfig = {attributes: true, childList: true, subtree: true};
 	EhShoutTimers[0] = {'timer':99999};
 	if (typeof allEhShoutboxes == "object" && allEhShoutboxes.length > 0)
-	{
+	{		
 		for(i=0;i<allEhShoutboxes.length;i++)
 		{
 			shoutboxidz = allEhShoutboxes[i].innerHTML;
@@ -212,15 +212,6 @@ $(document).ready(function() {
 	};
 });
 
-function EhShoutLogin(opt)
-{
-	var shoutboxLogin = document.getElementById("shoutLogin");
-	if (opt == true)
-		document.getElementById("shoutLogin").className = "alternative2 warn_mute";
-	else
-		document.getElementById("shoutLogin").className = "alternative";
-}
-
 function EhCascadeArray(origArray)
 {
 	for(var j=0;j<origArray.length;j++)
@@ -244,7 +235,7 @@ function EhCascadeArray(origArray)
 			}
 		}
 	}
-
+	
 	return origArray;
 }
 
@@ -276,15 +267,12 @@ function EhRecursiveSetTimeouts(functionsArray, current)
 
 	let EhTimeout = setTimeout(function() {
 		var l;
-		var prop;
-		// const prop
-		for (prop in functionsArray[current])
+		for (const prop in functionsArray[current])
 		{
 			l = prop.substring(0, 4);
 			if (l == 'args')
 				EhShoutRefresh(functionsArray[current][prop]);
 		}
-
 	}, duration, functionsArray, current);
 
 	if (functionsArray.length-1 > current)
@@ -312,7 +300,7 @@ function EhShoutKeyDown(event, id)
 		var iusername = $('#shout_username_' + id).val();
 		var imessage = $('#shout_message_' + id).val();
 		EhShoutShouting(id, iusername, imessage);
-
+		
 		// prevent flood ~ 3 second delay between shout submissions
 		setTimeout(function(){
 			EhShoutIndicator('shoutbox_load_'+id, false);
@@ -414,9 +402,8 @@ function EhShoutDelHistory(ele)
 	});
 }
 
-function EhShoutRefresh(id)
+function EhShoutRefresh(id = 0)
 {
-	var id = typeof id != "undefined" ? id : 0;
 	var shoutid = ehshoutboxid && ehshoutboxid != 0 ? ehshoutboxid : $.urlShoutParam('shoutbox_id');
 	shoutid = id > 0 ? id : shoutid;
 	var shoutDir = ehshoutreverse;
@@ -446,11 +433,12 @@ function EhShoutRefresh(id)
 		if (shoutLastTime != 0 && window.lastShout[shoutid] != shoutLastTime)
 		{
 			window.lastShout[shoutid] = shoutLastTime;
-			document.getElementById("ehlasttime_" + shoutid).innerHTML = 0;
+			document.getElementById("ehlasttime_" + shoutid).innerHTML = 0;			
 		}
 		else
 		{
 			shoutAudioFile = document.getElementById("ehaudiofile_" + shoutid) ? document.getElementById("ehaudiofile_" + shoutid).innerHTML : false;
+			
 		}
 	}
 	setTimeout(function(){

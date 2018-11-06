@@ -21,12 +21,6 @@ elseif (!defined('SMF'))
 
 global $smcFunc, $db_prefix, $modSettings, $sourcedir, $boarddir, $settings, $db_package_log, $package_cache;
 
-$ehportal_version = 1.23;
-$updates = array(
-	'sp_version' => '1.23',
-	'sp_smf_version' => '2.1',
-);
-
 // Add hooks to the database
 add_integration_function('integrate_load_permissions', '$sourcedir/PortalHooks.php|sportal_permissions');
 add_integration_function('integrate_pre_load', '$sourcedir/Subs-Portal.php|sp_smf_version');
@@ -518,7 +512,7 @@ $current_tables = $smcFunc['db_list_tables'](false, '%sp%');
 $real_prefix = preg_match('~^(`?)(.+?)\\1\\.(.*?)$~', $db_prefix, $match) === 1 ? $match[3] : $db_prefix;
 $info = '<ul>';
 
-// Loop through each table and do what is needed.
+// Loop through each table and do what needed.
 foreach ($tables as $table => $data)
 {
 	if (in_array(strtolower($real_prefix . $table), array_map('strtolower', $current_tables)))
@@ -1137,7 +1131,11 @@ $defaults = array(
 	'sp_enableIntegration' => 1,
 	'sp_adminIntegrationHide' => 1,
 	'sp_resize_images' => 1,
-	'ehportal_version' => $ehportal_version, 
+);
+
+$updates = array(
+	'sp_version' => '1.0',
+	'sp_smf_version' => '2.1',
 );
 
 foreach ($defaults as $index => $value)

@@ -122,7 +122,7 @@ function template_shoutbox_embed($shoutbox)
 			else
 				echo '<a href="javascript:void(0);" onclick="surroundText(\'', $tag['before'], '\', \'', $tag['after'], '\', document.getElementsByClassName(\'new_shout_', $shoutbox['id'], '\')[0]); return false;">';
 
-			echo '<img onmouseover="style_highlight(this, true);" onmouseout="if (window.style_highlight) style_highlight(this, false);" src="', $settings['images_url'], '/sp_shoutbox/', $image, '.png" alt="', $tag['description'], '" title="', $tag['description'], '" style="width: 23px; height: 23px; background-image: url(', $settings['images_url'], '/sp_shoutbox/bbc_bg.png); margin: 1px 2px 1px 1px;vertical-align: text-bottom;padding-top: 0.3125em;" /></a>';
+			echo '<img onmouseover="style_highlight(this, true);" onmouseout="if (window.style_highlight) style_highlight(this, false);" src="', $settings['images_url'], '/sp_shoutbox/', $image, '.png" align="bottom" alt="', $tag['description'], '" title="', $tag['description'], '" style="width: 23px; height: 23px; background-image: url(', $settings['images_url'], '/sp_shoutbox/bbc_bg.png); margin: 1px 2px 1px 1px;" /></a>';
 		}
 
 		echo '
@@ -317,12 +317,7 @@ function template_shoutbox_refresh()
 	echo '
 				</ul>
 				<script>
-					console.clear();
-					if (document.getElementById("shoutLogin"))
-					{
-						document.getElementById("shout_message_' . $id . '").disabled = true;
-						document.getElementById("shout_message_' . $id . '").value = "";
-					}';
+					console.clear();';
 
 	if (!empty($context['SPortal']['shouts'][0]['reverse']))
 		echo '

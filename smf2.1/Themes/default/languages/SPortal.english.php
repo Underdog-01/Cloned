@@ -147,8 +147,6 @@ $txt['sp_bbc_code'] = 'Code';
 $txt['sp_font_size'] = 'Font Size';
 $txt['sp_font_face'] = 'Font Face';
 $txt['sp_change_color'] = 'Change Color';
-$txt['sp_logged_out'] = 'You have been logged out of the forum.';
-$txt['sp_log_back'] = '<-- Click here to log back in -->';
 
 // EhPortal Profile
 $txt['EhPortalSettings'] = 'EhPortal Preferences';

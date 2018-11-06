@@ -19,7 +19,7 @@ function sportal_init($standalone = false)
 	global $context, $sourcedir, $scripturl, $boardurl, $modSettings;
 	global $settings, $options, $boarddir, $maintenance, $sportal_version;
 
-	$sportal_version = !empty($modSettings['ehportal_version']) ? $modSettings['ehportal_version'] : '0.00';
+	$sportal_version = '1.2';
 	loadLanguage('SportalShoutSounds');
 	if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'dlattach')
 		return;
@@ -297,14 +297,11 @@ function sportal_init_headers()
 	if ($modSettings['sp_resize_images'])
 	{
 		$context['html_headers'] .= '
-		if (window.addEventListener) {
-			window.addEventListener("load", sp_image_resize, false);
-		}
-		else if (window.attachEvent) {
+		if(window.attachEvent) {
 			window.attachEvent("onload", sp_image_resize);
 		}
 		else {
-			window.onload = sp_image_resize();
+			window.addEventListener("load", sp_image_resize, false);
 		}';
 	}
 

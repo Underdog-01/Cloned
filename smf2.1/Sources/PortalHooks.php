@@ -394,9 +394,9 @@ function sportal_initialize(&$no_stat_actions)
 				position: relative;
 				min-width: 95vw;
 				max-width: 95vw;
-				width: 95vw;
+				width: 95vw;				
 				left: -2px;
-				padding-left: 1px;
+				padding-left: 1px;				
 			}
 			#main_content_section
 			{
@@ -459,7 +459,7 @@ function sportal_initialize(&$no_stat_actions)
 				flex-wrap: wrap;
 				margin-left: auto;
 				margin-right: auto;
-				direction: ' . (!empty($context['right_to_left']) ? 'rtl' : 'ltr') . ';
+				direction: ' . (!empty($context['right_to_left']) ? 'rtl' : 'ltr') . ';				
 				justify-content: space-around;
 				line-height: 150%;
 				left: -4px;
@@ -473,7 +473,7 @@ function sportal_initialize(&$no_stat_actions)
 				flex-wrap: wrap;
 				margin-left: auto;
 				margin-right: auto;
-				direction: ' . (!empty($context['right_to_left']) ? 'rtl' : 'ltr') . ';
+				direction: ' . (!empty($context['right_to_left']) ? 'rtl' : 'ltr') . ';				
 				justify-content: space-around;
 				line-height: 150%;
 				left: -4px;
@@ -487,7 +487,7 @@ function sportal_initialize(&$no_stat_actions)
 				flex-wrap: wrap;
 				margin-left: auto;
 				margin-right: auto;
-				direction: ' . (!empty($context['right_to_left']) ? 'rtl' : 'ltr') . ';
+				direction: ' . (!empty($context['right_to_left']) ? 'rtl' : 'ltr') . ';				
 				justify-content: space-around;
 				line-height: 150%;
 				left: -4px;
@@ -505,7 +505,7 @@ function sportal_initialize(&$no_stat_actions)
 		}
 	</style>
 	<script>
-	$(document).ready(function(){
+	$(document).ready(function(){		
 		$( "input" ).css( "max-width", function( index ) {
 			return "80%";
 		});
@@ -516,10 +516,10 @@ function sportal_initialize(&$no_stat_actions)
 				if (scrollLeft > 0)
 					window.scrollTo(0, scrollTop);
 			}, 1000);
-		});
+		});		
 	});
 	</script>
-	<!--<![endif]-->';
+	<!--<![endif]-->';	
 	}
 	else
 		$_SESSION['isPortalMobile'] = false;

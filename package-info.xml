@@ -3,7 +3,7 @@
 <package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
 	<id>[ChenZhen]:EhPortal</id>
 	<name>EhPortal</name>
-	<version>1.23</version>
+	<version>1.22</version>
 	<type>modification</type>
 
 	<!-- Install actions -->

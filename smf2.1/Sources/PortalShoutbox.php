@@ -36,12 +36,7 @@ function sportal_shoutbox()
 	if (empty($context['SPortal']['shoutbox']))
 		fatal_lang_error('error_sp_shoutbox_not_exist', false);
 
-	$context['SPortal']['shoutbox']['warning'] = parse_bbc($context['SPortal']['shoutbox']['warning']);	
-	if (isset($_SESSION['old_url']) && stripos($_SESSION['old_url'], $scripturl . '?action=login2;sa=check;member=' . $user_info['id']) !== false)
-	{
-		$_SESSION['old_url'] = $scripturl . '?action=portal';
-		redirectexit($scripturl . '?action=portal');
-	}
+	$context['SPortal']['shoutbox']['warning'] = parse_bbc($context['SPortal']['shoutbox']['warning']);
 
 	require_once($sourcedir . '/Subs-Post.php');
 	loadTemplate('PortalShoutbox');

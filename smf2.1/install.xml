@@ -2,7 +2,7 @@
 <!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
 	<id>[ChenZhen]:EhPortal</id>
-	<version>1.23</version>
+	<version>1.22</version>
 	<file name="$sourcedir/Recent.php">
 		<operation>
 			<search position="replace"><![CDATA[				'href' => $scripturl . '#c' . $row['id_cat'],
@@ -149,7 +149,7 @@
 	{
 		// Redirect the user to the forum.
 		if (!empty($modSettings['sp_disableForumRedirect']))
-			$setLocation = 'index.php?action=forum';
+			$setLocation = 'action=forum';
 		// Redirect the user to the SSI.php standalone portal.
 		elseif ($modSettings['sp_portal_mode'] == 3)
 		{
@@ -318,26 +318,6 @@
 			<add><![CDATA[// Do not update the online log for the EhPortal Shoutbox
 	if (!empty($context['current_action']) && ($context['current_action'] == 'whoehportalshout' || $context['current_action'] == 'ehportal_shout'))
 		return;
-
-	]]></add>
-		</operation>
-	</file>
-	<file name="$themedir/Login.template.php">
-		<operation>
-			<search position="after"><![CDATA[// This isn't that much...]]></search>
-			<add><![CDATA[// This detects the EhPortal shoutbox refresh & kicks the user/guest to the proper page if necessary
-	if (isset($_REQUEST['xml2']) && isset($_REQUEST['shoutbox_id']))
-	{
-		echo '
-	<script>
-		$(".message_box").html(function() {
-			var newShoutReturn = \'<p style="padding: 20px 0px 0px 3px;">' . $txt['sp_logged_out'] . '</p><div style="padding: 10px 0px 0px 3px;" class="largetext"><span class="alternative" id="shoutLogin" onmouseover="EhShoutLogin(true)" onmouseout="EhShoutLogin(false)" onclick="window.location.replace(`' . $scripturl . '?action=portal' . '`);" style="border: 1px solid;">' . $txt['sp_log_back'] . '</span></div>\';
-			return newShoutReturn;
-		});
-	</script>';
-
-		return;
-	}
 
 	]]></add>
 		</operation>

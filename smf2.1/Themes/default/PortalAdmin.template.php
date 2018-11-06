@@ -216,7 +216,7 @@ function template_information()
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="https://web-develop.ca/Themes/default/scripts/ehportal_info.js?ep', (string)rand(1, 99), '"></script>
+	<script type="text/javascript" src="https://web-develop.ca/Themes/default/scripts/ehportal_info.js?ep1"></script>
 	<script type="text/javascript"><!-- // --><![CDATA[
 		function ehSetAnnouncements()
 		{

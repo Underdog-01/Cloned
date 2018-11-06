@@ -3008,7 +3008,7 @@ function sp_arcade($parameters, $id, $return_parameters = false)
 			{
 				echo '
 									<li class="sp_list_top">', sp_embed_image(isset($types[++$current]) ? $types[$current] : 'user' ), ' ', $stat['link'], '</li>
-									<li class="', empty($stat['last']) ? 'sp_list_bottom ' : '', 'sp_list_indent smalltext"><img src="', $settings['default_images_url'], '/sp/bar.gif" style="width: ', $stat['precent'], ';height: 8px;" alt="" /> ', $stat['champions'], ' ', $txt['sp-games'], '</li>';
+									<li class="', empty($stat['last']) ? 'sp_list_bottom ' : '', 'sp_list_indent smalltext"><img src="', $settings['images_url'], '/bar.gif" style="width: ', $stat['precent'], ';height: 8px;" alt="" /> ', $stat['champions'], ' ', $txt['sp-games'], '</li>';
 			}
 		}
 		elseif ($type == 2)

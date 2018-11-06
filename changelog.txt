@@ -1,15 +1,6 @@
 Changes go downward, versions go upward. Please scroll to the bottom for a legend.
 Changelog started October 08, 2014.
-Changelog last updated November 02, 2018.
-
-EhPortal 1.23
-================================================================================
-! Fixed javascript default function parameters for IE11
-! Fixed missing icon for Arcade block
-! Fixed shoutbox javascript for IE11
-! Fixed redirect when user is logged out and forum is set to no guest access
-! Fixed redirectexit() forum url
-&! Fixed login template not to appear within shoutbox when forum login is timed out
+Changelog last updated September 11, 2018.
 
 EhPortal 1.22
 ================================================================================
